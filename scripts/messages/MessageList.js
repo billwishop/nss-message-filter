@@ -34,3 +34,10 @@ friendListSection.addEventListener("change", changeEvent => {
     }
 })
 
+const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("friendSelected", event => {
+    const friendName = event.detail.friend
+    const messages = getMessagesByFriend(friendName)
+    render(messages)
+})
